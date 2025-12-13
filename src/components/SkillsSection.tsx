@@ -11,7 +11,10 @@ const SkillsSection = () => {
     { name: "Polygon", icon: "https://cryptologos.cc/logos/polygon-matic-logo.svg" },
     { name: "Bitcoin", icon: "https://cryptologos.cc/logos/bitcoin-btc-logo.svg" },
     { name: "Ethereum", icon: "https://cryptologos.cc/logos/ethereum-eth-logo.svg" },
-    { name: "Blockchain", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+    { name: "TradingView", icon: "https://www.tradingview.com/static/images/logo-preview.png" },
+    { name: "Apify", icon: "https://avatars.githubusercontent.com/u/24586296?s=200&v=4" },
+    { name: "n8n", icon: "https://avatars.githubusercontent.com/u/45487711?s=200&v=4" },
+    { name: "Make", icon: "https://images.ctfassets.net/qqlj6g4ee76j/2gI4xfqNbMEWF8D7A0E5LQ/f0e49c07d05fb4b5b9f1b5dc8f2c5e8f/make-logo.png" },
   ];
 
   const tools = [
@@ -23,6 +26,10 @@ const SkillsSection = () => {
     { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
     { name: "Photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" },
     { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "TradingView", icon: "https://www.tradingview.com/static/images/logo-preview.png" },
+    { name: "Apify", icon: "https://avatars.githubusercontent.com/u/24586296?s=200&v=4" },
+    { name: "n8n", icon: "https://avatars.githubusercontent.com/u/45487711?s=200&v=4" },
+    { name: "Make", icon: "https://images.ctfassets.net/qqlj6g4ee76j/2gI4xfqNbMEWF8D7A0E5LQ/f0e49c07d05fb4b5b9f1b5dc8f2c5e8f/make-logo.png" },
   ];
 
   return (
@@ -44,7 +51,7 @@ const SkillsSection = () => {
           <h3 className="text-xl font-mono font-semibold mb-8 text-center">
             <span className="text-primary">{"{"}</span> I Code In <span className="text-primary">{"}"}</span>
           </h3>
-          <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 md:gap-6">
+          <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-4 md:gap-6">
             {codingSkills.map((skill, index) => (
               <div
                 key={skill.name}
@@ -54,7 +61,10 @@ const SkillsSection = () => {
                 <img
                   src={skill.icon}
                   alt={skill.name}
-                  className="w-10 h-10 md:w-12 md:h-12 mb-2 group-hover:scale-110 transition-transform duration-300"
+                  className="w-10 h-10 md:w-12 md:h-12 mb-2 group-hover:scale-110 transition-transform duration-300 rounded-lg"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
                 <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors text-center">
                   {skill.name}
@@ -79,7 +89,10 @@ const SkillsSection = () => {
                 <img
                   src={tool.icon}
                   alt={tool.name}
-                  className="w-10 h-10 md:w-12 md:h-12 mb-2 group-hover:scale-110 transition-transform duration-300 invert"
+                  className="w-10 h-10 md:w-12 md:h-12 mb-2 group-hover:scale-110 transition-transform duration-300 invert rounded-lg"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
                 <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors text-center">
                   {tool.name}

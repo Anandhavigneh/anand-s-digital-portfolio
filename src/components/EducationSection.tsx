@@ -1,29 +1,61 @@
 import annaUniversity from "@/assets/anna-university.png";
 import jamalCollege from "@/assets/jamal-college.png";
 import donBoscoSchool from "@/assets/don-bosco-school.jpg";
+import { GraduationCap, MapPin, Calendar, Award, BookOpen } from "lucide-react";
 
 const EducationSection = () => {
   const education = [
     {
-      institution: "Anna University",
+      institution: "University College of Engineering, BIT Campus, Anna University",
       degree: "Master of Computer Applications (MCA)",
-      period: "2024 - Present",
+      period: "2023 - 2025",
+      location: "Tiruchirappalli, India",
       logo: annaUniversity,
-      description: "Currently pursuing MCA with focus on advanced computing and software development.",
+      description: "Completed advanced studies in computer science with specialization in software development and data science. Focused on practical applications of computing principles and modern software engineering methodologies.",
+      achievements: [
+        "Developed a full-stack web application for campus resource management",
+        "Participated in university coding competitions and hackathons",
+        "Collaborated on research project exploring Crypto & blockchain applications",
+      ],
+      courses: [
+        "Advanced Data Structures",
+        "Web Application Development",
+        "Database Management Systems",
+        "Software Engineering",
+        "Crypto & Blockchain",
+        "Cloud Computing",
+      ],
     },
     {
       institution: "Jamal Mohamed College (Autonomous)",
       degree: "Bachelor of Computer Applications (BCA)",
-      period: "2021 - 2024",
+      period: "2020 - 2023",
+      location: "Tiruchirappalli, India",
       logo: jamalCollege,
-      description: "College with Potential for Excellence. Accredited (3rd Cycle) with 'A' Grade by NAAC.",
+      description: "Completed foundational and intermediate studies in computer applications with a strong focus on programming, database systems, and software development fundamentals. Gained hands-on experience in building practical applications and understanding core computing concepts essential for backend and full-stack development.",
+      achievements: [
+        "Python Application Development",
+        "Database Design (MySQL)",
+        "Web Development Projects",
+        "Problem Solving & Algorithms",
+        "Crypto & Blockchain Basics",
+      ],
+      courses: [
+        "Python Programming",
+        "Data Structures",
+        "Database Management Systems",
+        "Software Engineering",
+      ],
     },
     {
       institution: "Don Bosco Higher Secondary School",
       degree: "Higher Secondary Education",
-      period: "2019 - 2021",
+      period: "2016 - 2021",
+      location: "Tiruchirappalli, India",
       logo: donBoscoSchool,
-      description: "Completed higher secondary education with a focus on science and mathematics.",
+      description: "Completed higher secondary education with a focus on science and mathematics, building a strong analytical foundation.",
+      achievements: [],
+      courses: [],
     },
   ];
 
@@ -41,49 +73,85 @@ const EducationSection = () => {
           </p>
         </div>
 
-        {/* Education Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent" />
-
-            {education.map((edu, index) => (
-              <div
-                key={edu.institution}
-                className={`relative flex items-start gap-8 mb-12 ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-primary rounded-full -translate-x-1/2 glow-box z-10" />
-
-                {/* Content Card */}
-                <div
-                  className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${
-                    index % 2 === 0 ? "md:pr-8" : "md:pl-8"
-                  }`}
-                >
-                  <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 group">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-16 h-16 rounded-xl bg-secondary/50 p-2 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
-                        <img
-                          src={edu.logo}
-                          alt={edu.institution}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <div>
-                        <span className="text-primary font-mono text-xs">{edu.period}</span>
-                        <h3 className="text-lg font-bold mt-1">{edu.institution}</h3>
-                        <p className="text-sm text-muted-foreground">{edu.degree}</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{edu.description}</p>
+        {/* Education Cards */}
+        <div className="max-w-5xl mx-auto space-y-8">
+          {education.map((edu, index) => (
+            <div
+              key={edu.institution}
+              className="group p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300"
+            >
+              <div className="flex flex-col md:flex-row gap-6">
+                {/* Logo */}
+                <div className="shrink-0">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-secondary/50 p-3 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                    <img
+                      src={edu.logo}
+                      alt={edu.institution}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
+
+                {/* Content */}
+                <div className="flex-1">
+                  {/* Header */}
+                  <div className="mb-4">
+                    <div className="flex items-center gap-2 text-primary font-mono text-sm mb-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>{edu.period}</span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-1">{edu.degree}</h3>
+                    <p className="text-lg text-foreground/80 font-medium">{edu.institution}</p>
+                    <div className="flex items-center gap-2 text-muted-foreground text-sm mt-1">
+                      <MapPin className="w-4 h-4" />
+                      <span>{edu.location}</span>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground mb-4">{edu.description}</p>
+
+                  {/* Achievements */}
+                  {edu.achievements.length > 0 && (
+                    <div className="mb-4">
+                      <div className="flex items-center gap-2 text-foreground font-semibold mb-2">
+                        <Award className="w-4 h-4 text-primary" />
+                        <span>Achievements</span>
+                      </div>
+                      <ul className="space-y-1">
+                        {edu.achievements.map((achievement, i) => (
+                          <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Key Courses */}
+                  {edu.courses.length > 0 && (
+                    <div>
+                      <div className="flex items-center gap-2 text-foreground font-semibold mb-2">
+                        <BookOpen className="w-4 h-4 text-primary" />
+                        <span>Key Courses</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {edu.courses.map((course, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+                          >
+                            {course}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
