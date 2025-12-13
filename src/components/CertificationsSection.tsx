@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLink } from "lucide-react";
 
@@ -6,6 +5,7 @@ import certMagicBus from "@/assets/cert-magic-bus.jpg";
 import certWadhwani from "@/assets/cert-wadhwani.jpg";
 import certBnRathi from "@/assets/cert-bn-rathi.jpg";
 import certJamalCollege from "@/assets/cert-jamal-college.jpg";
+import certLinkedinGithub from "@/assets/cert-linkedin-github.jpg";
 
 const CertificationsSection = () => {
   const certifications = [
@@ -37,6 +37,13 @@ const CertificationsSection = () => {
       image: certJamalCollege,
       description: "Value Added Course conducted by the Department of Computer Application.",
     },
+    {
+      title: "Career Essentials in GitHub Professional Certificate",
+      issuer: "LinkedIn Learning & GitHub",
+      date: "April 28, 2024",
+      image: certLinkedinGithub,
+      description: "Learning Path completed - 4 hours 18 minutes covering GitHub essentials.",
+    },
   ];
 
   return (
@@ -54,13 +61,13 @@ const CertificationsSection = () => {
         </div>
 
         {/* Certifications Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {certifications.map((cert, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {certifications.map((cert) => (
             <Dialog key={cert.title}>
               <DialogTrigger asChild>
                 <div className="group cursor-pointer p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:scale-[1.02]">
-                  <div className="flex gap-4">
-                    <div className="w-24 h-24 rounded-xl overflow-hidden shrink-0 border border-border">
+                  <div className="flex flex-col gap-4">
+                    <div className="w-full h-40 rounded-xl overflow-hidden border border-border">
                       <img
                         src={cert.image}
                         alt={cert.title}
