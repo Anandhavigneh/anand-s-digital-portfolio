@@ -1,5 +1,9 @@
 import { Github, ExternalLink, TrendingUp, Bot, Coins, Workflow } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import projectTradingBot from "@/assets/project-trading-bot.png";
+import projectWeb3Dapp from "@/assets/project-web3-dapp.png";
+import projectAutomation from "@/assets/project-automation.png";
+import projectCryptoAnalytics from "@/assets/project-crypto-analytics.png";
 
 const ProjectsSection = () => {
   const projects = [
@@ -8,6 +12,7 @@ const ProjectsSection = () => {
       description: "AI-powered trading bot using Supertrend Indicator for automated cryptocurrency trading with real-time market analysis and execution.",
       tags: ["Python", "AI", "Trading", "Blockchain"],
       icon: TrendingUp,
+      image: projectTradingBot,
       link: "https://github.com/Anandhavigneh",
     },
     {
@@ -15,6 +20,7 @@ const ProjectsSection = () => {
       description: "Decentralized application built on Ethereum and Polygon networks with smart contract integration for secure transactions.",
       tags: ["Solidity", "Ethereum", "Polygon", "Web3"],
       icon: Coins,
+      image: projectWeb3Dapp,
       link: "https://github.com/Anandhavigneh",
     },
     {
@@ -22,6 +28,7 @@ const ProjectsSection = () => {
       description: "Custom automation pipelines using n8n and Make for data processing, API integrations, and workflow optimization.",
       tags: ["n8n", "Make", "Apify", "Automation"],
       icon: Workflow,
+      image: projectAutomation,
       link: "https://github.com/Anandhavigneh",
     },
     {
@@ -29,6 +36,7 @@ const ProjectsSection = () => {
       description: "TradingView-integrated analytics dashboard for real-time cryptocurrency market analysis and signal generation.",
       tags: ["TradingView", "Analytics", "Crypto", "Python"],
       icon: Bot,
+      image: projectCryptoAnalytics,
       link: "https://github.com/Anandhavigneh",
     },
   ];
@@ -87,47 +95,58 @@ const ProjectsSection = () => {
             return (
               <div
                 key={project.title}
-                className="group p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-300 hover:scale-[1.02]"
+                className="group rounded-2xl bg-card/80 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-300 hover:scale-[1.02] overflow-hidden"
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {project.description}
-                    </p>
-                  </div>
+                {/* Project Image */}
+                <div className="w-full h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
+                
+                <div className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex gap-3">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="gap-2"
+                      asChild
                     >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links */}
-                <div className="flex gap-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="gap-2"
-                    asChild
-                  >
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4" />
-                      View Code
-                    </a>
-                  </Button>
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4" />
+                        View Code
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </div>
             );

@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLink } from "lucide-react";
 
-import certMagicBus from "@/assets/cert-magic-bus.jpg";
+import certMagicBus from "@/assets/cert-magic-bus-new.png";
 import certWadhwani from "@/assets/cert-wadhwani.jpg";
 import certBnRathi from "@/assets/cert-bn-rathi.jpg";
 import certJamalCollege from "@/assets/cert-jamal-college.jpg";
