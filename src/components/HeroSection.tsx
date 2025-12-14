@@ -1,7 +1,25 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download, ChevronDown } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const HeroSection = () => {
+  const titles = ["Crypto Engineer", "Backend Developer", "ALGO DEV & Trader", "Web 3.0"];
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+        setIsVisible(true);
+      }, 500);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20">
       {/* Background Effects */}
@@ -14,6 +32,18 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
+          {/* Profile Photo */}
+          <div className="mb-8 animate-fade-in">
+            <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse blur-md opacity-50" />
+              <img
+                src={profilePhoto}
+                alt="Anandhavignesh R"
+                className="relative w-full h-full object-cover rounded-full border-4 border-primary/50"
+              />
+            </div>
+          </div>
+
           {/* Greeting */}
           <p className="text-primary font-mono text-sm md:text-base mb-4 animate-fade-in">
             Hi there 👋, I'm
@@ -24,23 +54,16 @@ const HeroSection = () => {
             <span className="text-gradient">Anandhavignesh R</span>
           </h1>
 
-          {/* Titles */}
-          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            {["MCA Student", "Crypto Engineer", "Backend Dev", "ALGO DEV & Trader", "Web 3.0"].map((title, index) => (
-              <span
-                key={title}
-                className="px-3 py-1 rounded-full text-xs md:text-sm font-medium bg-secondary border border-border text-muted-foreground"
-              >
-                #{title}
-              </span>
-            ))}
+          {/* Animated Titles */}
+          <div className="h-12 mb-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <span
+              className={`inline-block px-6 py-2 rounded-full text-lg md:text-xl font-bold bg-primary/20 border-2 border-primary text-primary transition-all duration-500 ${
+                isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-4"
+              }`}
+            >
+              {titles[currentTitleIndex]}
+            </span>
           </div>
-
-          {/* Description */}
-          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            Currently learning <span className="text-primary">DSA</span> and Integrating <span className="text-primary">AI & Web 3.0</span>. 
-            Passionate about building innovative solutions in blockchain and algorithmic trading.
-          </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: "0.4s" }}>
