@@ -9,14 +9,14 @@ const AboutSection = () => {
             Who <span className="text-gradient">I Am</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A skilled software developer with a strong foundation in mathematics and computer science
+            A skilled software developer with a strong foundation in crypto and computer science
           </p>
         </div>
 
         {/* Tagline */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Dedicated software developer with a strong foundation in mathematics seeking to leverage analytical problem-solving skills and technical expertise to build innovative, efficient applications. Specializing in <span className="text-primary">algorithm optimization</span> and <span className="text-primary">blockchain technology</span> to deliver elegant solutions to complex challenges.
+            Dedicated software developer with a strong foundation in crypto seeking to leverage analytical problem-solving skills and technical expertise to build innovative, efficient applications. Specializing in <span className="text-primary">algorithm optimization</span> and <span className="text-primary">blockchain technology</span> to deliver elegant solutions to complex challenges.
           </p>
         </div>
 

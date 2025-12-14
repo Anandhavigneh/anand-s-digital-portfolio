@@ -21,14 +21,50 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20">
-      {/* Background Effects */}
+    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-32">
+      {/* 3D Crypto Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
       
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
+      {/* Floating 3D Crypto Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Bitcoin */}
+        <div className="absolute top-[15%] left-[10%] w-16 h-16 opacity-20 animate-float">
+          <div className="w-full h-full border-2 border-primary/60 rounded-full flex items-center justify-center animate-spin" style={{ animationDuration: '15s' }}>
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="" className="w-10 h-10" />
+          </div>
+        </div>
+        {/* Ethereum */}
+        <div className="absolute top-[25%] right-[15%] w-14 h-14 opacity-15 animate-float" style={{ animationDelay: '1s' }}>
+          <div className="w-full h-full border-2 border-accent/50 rounded-lg transform rotate-45 flex items-center justify-center animate-spin" style={{ animationDuration: '20s' }}>
+            <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg" alt="" className="w-8 h-8 -rotate-45" />
+          </div>
+        </div>
+        {/* Solana */}
+        <div className="absolute bottom-[30%] left-[15%] w-12 h-12 opacity-15 animate-float" style={{ animationDelay: '2s' }}>
+          <div className="w-full h-full border-2 border-primary/40 rounded-lg flex items-center justify-center animate-spin" style={{ animationDuration: '25s' }}>
+            <img src="https://cryptologos.cc/logos/solana-sol-logo.svg" alt="" className="w-7 h-7" />
+          </div>
+        </div>
+        {/* Polygon */}
+        <div className="absolute bottom-[20%] right-[10%] w-10 h-10 opacity-20 animate-float" style={{ animationDelay: '0.5s' }}>
+          <div className="w-full h-full border-2 border-accent/40 rounded-full flex items-center justify-center animate-spin" style={{ animationDuration: '18s' }}>
+            <img src="https://cryptologos.cc/logos/polygon-matic-logo.svg" alt="" className="w-6 h-6" />
+          </div>
+        </div>
+        {/* BNB */}
+        <div className="absolute top-[50%] left-[5%] w-8 h-8 opacity-10 animate-float" style={{ animationDelay: '1.5s' }}>
+          <div className="w-full h-full border border-primary/30 rounded-lg flex items-center justify-center animate-spin" style={{ animationDuration: '22s' }}>
+            <img src="https://cryptologos.cc/logos/bnb-bnb-logo.svg" alt="" className="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+      
+      {/* Blockchain Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
+      
+      {/* Gradient Orbs */}
+      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">

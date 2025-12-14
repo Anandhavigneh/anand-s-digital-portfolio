@@ -1,7 +1,7 @@
-import { Github, ExternalLink, TrendingUp, Bot, Coins, Workflow } from "lucide-react";
+import { Github, TrendingUp, Bot, Coins, Workflow } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import projectTradingBot from "@/assets/project-trading-bot.png";
-import projectWeb3Dapp from "@/assets/project-web3-dapp.png";
+import projectSniperBot from "@/assets/project-sniper-bot.png";
 import projectAutomation from "@/assets/project-automation.png";
 import projectCryptoAnalytics from "@/assets/project-crypto-analytics.png";
 
@@ -16,11 +16,11 @@ const ProjectsSection = () => {
       link: "https://github.com/Anandhavigneh",
     },
     {
-      title: "Web3 DApp Development",
-      description: "Decentralized application built on Ethereum and Polygon networks with smart contract integration for secure transactions.",
-      tags: ["Solidity", "Ethereum", "Polygon", "Web3"],
+      title: "Uniswap V2 BASE Network Sniper Bot",
+      description: "Automated sniper bot built for the BASE network that detects newly created Uniswap V2 pairs and executes instant buy trades via MetaMask integration with built-in security checks for safer launches.",
+      tags: ["Uniswap V2", "BASE Network", "MetaMask", "Web3", "Solidity", "Sniper Bot"],
       icon: Coins,
-      image: projectWeb3Dapp,
+      image: projectSniperBot,
       link: "https://github.com/Anandhavigneh",
     },
     {
@@ -43,37 +43,54 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-20 md:py-32 relative overflow-hidden">
-      {/* Animated Background */}
+      {/* 3D Animated Background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Floating crypto icons */}
-        <div className="absolute top-20 left-10 w-16 h-16 opacity-10 animate-pulse">
-          <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="" className="w-full h-full" />
+        {/* Floating 3D crypto cubes */}
+        <div className="absolute top-20 left-10 w-20 h-20 opacity-20 animate-float">
+          <div className="w-full h-full border-2 border-primary/50 rounded-lg transform rotate-45 animate-spin" style={{ animationDuration: '20s' }}>
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="" className="w-8 h-8 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45" />
+          </div>
         </div>
-        <div className="absolute top-40 right-20 w-12 h-12 opacity-10 animate-pulse" style={{ animationDelay: '1s' }}>
-          <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg" alt="" className="w-full h-full" />
+        <div className="absolute top-40 right-20 w-16 h-16 opacity-15 animate-float" style={{ animationDelay: '1s' }}>
+          <div className="w-full h-full border-2 border-accent/50 rounded-lg transform rotate-12 animate-spin" style={{ animationDuration: '25s' }}>
+            <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg" alt="" className="w-6 h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12" />
+          </div>
         </div>
-        <div className="absolute bottom-40 left-20 w-14 h-14 opacity-10 animate-pulse" style={{ animationDelay: '2s' }}>
-          <img src="https://cryptologos.cc/logos/polygon-matic-logo.svg" alt="" className="w-full h-full" />
+        <div className="absolute bottom-40 left-20 w-18 h-18 opacity-15 animate-float" style={{ animationDelay: '2s' }}>
+          <div className="w-full h-full border-2 border-primary/30 rounded-lg transform -rotate-12 animate-spin" style={{ animationDuration: '30s' }}>
+            <img src="https://cryptologos.cc/logos/polygon-matic-logo.svg" alt="" className="w-6 h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-12" />
+          </div>
         </div>
-        <div className="absolute bottom-20 right-10 w-10 h-10 opacity-10 animate-pulse" style={{ animationDelay: '0.5s' }}>
-          <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg" alt="" className="w-full h-full" />
+        <div className="absolute bottom-20 right-10 w-14 h-14 opacity-20 animate-float" style={{ animationDelay: '0.5s' }}>
+          <div className="w-full h-full border-2 border-accent/40 rounded-lg transform rotate-30 animate-spin" style={{ animationDuration: '22s' }}>
+            <img src="https://cryptologos.cc/logos/solana-sol-logo.svg" alt="" className="w-5 h-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+          </div>
         </div>
         
-        {/* Blockchain connection lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
+        {/* 3D Blockchain connection lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="blockchain-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <circle cx="50" cy="50" r="2" fill="currentColor" className="text-primary" />
-              <line x1="50" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-              <line x1="50" y1="50" x2="50" y2="100" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+            <pattern id="blockchain-3d-pattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+              <circle cx="60" cy="60" r="3" fill="currentColor" className="text-primary animate-pulse" />
+              <circle cx="10" cy="10" r="2" fill="currentColor" className="text-accent" />
+              <circle cx="110" cy="110" r="2" fill="currentColor" className="text-primary" />
+              <line x1="60" y1="60" x2="120" y2="60" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+              <line x1="60" y1="60" x2="60" y2="120" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+              <line x1="60" y1="60" x2="10" y2="10" stroke="currentColor" strokeWidth="0.3" className="text-accent" strokeDasharray="4 2" />
+              <line x1="60" y1="60" x2="110" y2="110" stroke="currentColor" strokeWidth="0.3" className="text-accent" strokeDasharray="4 2" />
             </pattern>
+            <linearGradient id="grid-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(180 100% 50%)" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="hsl(280 100% 65%)" stopOpacity="0.05" />
+            </linearGradient>
           </defs>
-          <rect width="100%" height="100%" fill="url(#blockchain-pattern)" />
+          <rect width="100%" height="100%" fill="url(#blockchain-3d-pattern)" />
         </svg>
         
-        {/* Gradient overlays */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        {/* Gradient orbs */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -90,7 +107,7 @@ const ProjectsSection = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {projects.map((project, index) => {
+          {projects.map((project) => {
             const IconComponent = project.icon;
             return (
               <div
