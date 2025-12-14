@@ -6,6 +6,7 @@ import certWadhwani from "@/assets/cert-wadhwani.jpg";
 import certBnRathi from "@/assets/cert-bn-rathi.jpg";
 import certJamalCollege from "@/assets/cert-jamal-college.jpg";
 import certLinkedinGithub from "@/assets/cert-linkedin-github.jpg";
+import certGithubCopilot from "@/assets/cert-github-copilot.png";
 
 const CertificationsSection = () => {
   const certifications = [
@@ -43,6 +44,13 @@ const CertificationsSection = () => {
       date: "April 28, 2024",
       image: certLinkedinGithub,
       description: "Learning Path completed - 4 hours 18 minutes covering GitHub essentials.",
+    },
+    {
+      title: "Practical GitHub Copilot",
+      issuer: "LinkedIn Learning",
+      date: "May 04, 2024",
+      image: certGithubCopilot,
+      description: "Course completed – 1 hour covering practical usage of GitHub Copilot for code suggestions, productivity improvement, and real-time developer assistance.",
     },
   ];
 
