@@ -9,9 +9,6 @@ const Footer = () => {
             {"<AV />"}
           </div>
           
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-primary fill-primary" /> by Anandhavignesh
-          </p>
 
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} All rights reserved.
